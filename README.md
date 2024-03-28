@@ -15,5 +15,6 @@ This project include task of creating ETL pipeline and Data Analysis
 - `README.md`: This file.
 ## Prerequisites
 
+
 - Python 3.x installed on your system.
 - DuckDB installed. You can install DuckDB using pip:
