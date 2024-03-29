@@ -31,7 +31,7 @@ Some points I want to highlight for this case study.
 
 - Python 3.9 installed on your system.
 - Git
-- Docker
+- Docker (if you want to create docker image)
 
 ## Setup
 
@@ -40,7 +40,7 @@ Clone Repository
 git clone https://github.com/Vishal14sw20/Scalable_coding_task.git
 ```
 
-Unzip `data/dataset.zip` file.
+Unzip `data/dataset.zip` file inside data folder.
 ```
 unzip data/dataset.zip -d data/
 ```
@@ -49,7 +49,7 @@ unzip data/dataset.zip -d data/
 brew install unzip
 ```
 
-## Running Locally on MacOs
+### Running Locally on MacOs
 
 Go to that repository.
 ```
@@ -66,14 +66,16 @@ Run python script
 python3 main.py
 ```
 
-## Creating Docker Image
+you can see results of it in pipeline.log file.
+
+### Creating Docker Image
 
 Building image.
 ```
 docker build -t scalable-capital .
 ```
 
-Running container. please set path where you want to save log file.
+Running container. please set path for persist volume.
 ```
 docker run -v /path/to/your/host/directory:/usr/src/app scalable-capital
 ```
@@ -102,5 +104,6 @@ If I had a more time (week-ends :-p),
 - More Error handling.
 - Instead of storing data in root directory I could have stored it somewhere else and load it.
 - For analysis setting up jupyter notebook. So, you can see queries with result there.
+-  config file for source and destination database , instead of hard coding.
 
 
