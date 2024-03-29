@@ -55,4 +55,3 @@ def load_data(conn, file_path):
     logging.info(f" ETL Total number of Null Artists in source::  {null_artist}")
     logging.info(f" Data Loaded successfully in database")
 
-    conn.close()

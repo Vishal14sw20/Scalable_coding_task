@@ -65,3 +65,5 @@ def analysis(conn):
         ORDER BY listen_date;"""
 
         logging.info(conn.query(fifth_query))
+
+        conn.close()
