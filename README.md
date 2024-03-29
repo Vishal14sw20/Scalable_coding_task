@@ -75,9 +75,14 @@ Building image.
 docker build -t scalable-capital .
 ```
 
-Running container. please set path for persist volume.
+Running container.
 ```
-docker run -v /path/to/your/host/directory:/usr/src/app scalable-capital
+docker run scalable-capital
+```
+
+copying data into your local host directory.
+```
+docker cp <containerIdOrName>:/path/to/file/in/container /app/
 ```
 
 This process will take some time to generating log file. meanwhile, you can check my sql queries in `analysis.py`
@@ -104,6 +109,7 @@ If I had a more time (week-ends :-p),
 - More Error handling.
 - Instead of storing data in root directory I could have stored it somewhere else and load it.
 - For analysis setting up jupyter notebook. So, you can see queries with result there.
--  config file for source and destination database , instead of hard coding.
+- config file for source and destination database , instead of hard coding.
+- Setting up docker-compose file (I have it in my dev branch but it was giving some error)
 
 
