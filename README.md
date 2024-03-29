@@ -82,7 +82,7 @@ docker run scalable-capital
 
 copying data into your local host directory.
 ```
-docker cp <containerIdOrName>:/path/to/file/in/container /app/
+docker cp <containerIdOrName>:/app/ /local_directory
 ```
 
 This process will take some time to generating log file. meanwhile, you can check my sql queries in `analysis.py`
