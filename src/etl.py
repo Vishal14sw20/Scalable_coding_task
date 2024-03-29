@@ -2,14 +2,13 @@ import json
 import logging
 
 from src.utils import insert_artist, insert_release, filter_data, insert_listen
-from src.database import create_database
 
-logging.basicConfig(filename='pipeline.log', level=logging.INFO)
+from src.logging_config import configure_logging
 
+configure_logging()
 
-def load_data(file_path):
-    # create database if not exists, or load it if it is already there.
-    conn = create_database()
+# load data into duck db
+def load_data(conn, file_path):
     # for printing in log that how many records were with null ids
     null_releases, null_artist, null_recording = 0, 0, 0
 
@@ -40,7 +39,8 @@ def load_data(file_path):
 
                 # Insert listen
                 if listen_id is not None:
-                    insert_listen(conn, listen_id, recording_id, release_id, artist_id, track_name, listened_at_datetime,
+                    insert_listen(conn, listen_id, recording_id, release_id, artist_id, track_name,
+                                  listened_at_datetime,
                                   user_name)
                 else:
                     null_recording += 1
@@ -56,7 +56,3 @@ def load_data(file_path):
     logging.info(f" Data Loaded successfully in database")
 
     conn.close()
-
-
-if __name__ == "__main__":
-    load_data('data/dataset.txt')

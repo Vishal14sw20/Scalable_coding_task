@@ -1,8 +1,10 @@
 import json
 from datetime import datetime
-
+import duckdb
 
 # return filtered data from json line
+
+
 def filter_data(line):
     # filter data from json line.
     data = json.loads(line)

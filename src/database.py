@@ -1,8 +1,9 @@
 import duckdb
 import os
 import logging
+from src.logging_config import configure_logging
 
-logging.basicConfig(filename='pipeline.log', level=logging.INFO)
+configure_logging()
 
 
 # creating 3 database here namely artist , release and listens.
