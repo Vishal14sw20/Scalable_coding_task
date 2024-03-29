@@ -15,12 +15,15 @@ def analysis(conn):
         ORDER BY total_listens DESC
         LIMIT 10;"""
 
+        logging.info('Question c)')
+        logging.info('Who are the top 10 users with respect to the number of songs listened to?')
         logging.info(conn.query(first_query))
 
         second_query = """SELECT COUNT(DISTINCT user_name) as users_count
         FROM listens
         WHERE listened_at::date = '2019-03-01';"""
 
+        logging.info('How many users did listen to some song on the 1st of March 2019?')
         logging.info(conn.query(second_query))
 
         third_query = """WITH first_listen AS (
@@ -33,6 +36,7 @@ def analysis(conn):
         JOIN listens L ON FL.user_name = L.user_name AND FL.first_listen_time = L.listened_at
         ORDER BY FL.user_name ;"""
 
+        logging.info('For every user, what was the first song the user listened to?')
         logging.info(conn.query(third_query))
 
         fourth_query = """WITH ListensPerUser AS (
@@ -50,6 +54,8 @@ def analysis(conn):
         WHERE row_number <= 3
         ORDER BY user_name, number_of_listens DESC;"""
 
+        logging.info('Question b)')
+        logging.info('Top 3 days with the most listens for each user')
         logging.info(conn.query(fourth_query))
 
         fifth_query = """WITH active_users AS (
@@ -64,6 +70,8 @@ def analysis(conn):
         GROUP BY listen_date
         ORDER BY listen_date;"""
 
+        logging.info('Question c)')
+        logging.info('Daily active users and percentage of active users')
         logging.info(conn.query(fifth_query))
 
         conn.close()

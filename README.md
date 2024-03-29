@@ -37,7 +37,7 @@ Some points I want to highlight for this case study.
 
 Clone Repository 
 ```
-git clone git@github.com:Vishal14sw20/Scalable_coding_task.git
+git clone https://github.com/Vishal14sw20/Scalable_coding_task.git
 ```
 Download data from [Test Datasets](https://drive.google.com/drive/folders/1wnAXYL4BtchW6J8C8YaqOOo9ba6NFOva)
  and unzip it. Move unziped file into data folder of root directory.
@@ -68,9 +68,28 @@ docker build -t scalable-capital .
 
 Running container.
 ```
-docker build -t scalable-capital .
+docker run scalable-capital
 ```
 
+check pipeline.log file inside the container.
+```
+docker exec -it <container-id> bash
+```
+
+It will take some time to generate log in this file, meanwhile, you can check my sql queries in `analysis.py`
+```
+cat pipeline.log
+```
+
+
+### Results 
+
+you can see results of my code in `pipeline.log` file. It takes little time in running.
+All Analysis table will be also visible there.
+
+### Conclusion
+
+I am really looking forward for discussion on it. There were many things I wanted to implement in this. But I guess this is enough solution.
 
 
 

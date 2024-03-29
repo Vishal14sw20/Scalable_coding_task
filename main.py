@@ -11,8 +11,6 @@ from src.database import create_database
 
 # Get the absolute path of the directory containing the current Python script
 current_dir = os.path.dirname(os.path.abspath(__file__))
-
-
 source_path = os.path.join(current_dir, 'data/dataset.txt')
 
 if __name__ == "__main__":
@@ -22,7 +20,7 @@ if __name__ == "__main__":
     # load data
     load_data(conn, source_path)
 
-
+    # task 2: Analysis
     analysis(conn)
 
-    logging.info("Sab theek he")
+    logging.info("Completed !!")
