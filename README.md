@@ -110,6 +110,6 @@ If I had a more time (week-ends :-p),
 - Instead of storing data in root directory I could have stored it somewhere else and load it.
 - For analysis setting up jupyter notebook. So, you can see queries with result there.
 - config file for source and destination database , instead of hard coding.
-- Setting up docker-compose file (I have it in my dev branch but it was giving some error)
+- Setting up docker-compose file
 
 
