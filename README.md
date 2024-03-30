@@ -39,6 +39,10 @@ Clone Repository
 ```
 git clone https://github.com/Vishal14sw20/Scalable_coding_task.git
 ```
+Go to that repository.
+```
+cd Scalable_coding_task
+```
 
 Unzip `data/dataset.zip` file inside data folder.
 ```
@@ -51,10 +55,6 @@ brew install unzip
 
 ### Running Locally on MacOs
 
-Go to that repository.
-```
-cd Scalable_coding_task
-```
 Create virtual_env, activate it and install requirements.
 ```
 python -m venv venv
@@ -80,9 +80,14 @@ Running container.
 docker run scalable-capital
 ```
 
-copying data into your local host directory.
+See running container and copy container_id.
 ```
-docker cp <containerIdOrName>:/app/pipeline.log /local_directory/pipeline.log
+docker ps
+```
+
+for copying data into your local host directory. paste your container_id here
+```
+docker cp <containerIdOrName>:/app/pipeline.log /local_directory/
 ```
 
 This process will take some time to generating log file. meanwhile, you can check my sql queries in `analysis.py`

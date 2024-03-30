@@ -14,8 +14,13 @@ def load_data(conn, file_path):
 
     # load json file
     with open(file_path, 'r') as file:
-        for line in file:
+        total_records = sum(1 for _ in file)  # Count total records for progress calculation
+        file.seek(0)  # Reset file pointer to the beginning
+        for i, line in enumerate(file, start=1):
             try:
+                if i % 5000 == 0:  # print % in log file when 500 records are inserted.
+                    progress_percentage = (i / total_records) * 100
+                    logging.info(f'ETL Processed record {i} of {total_records} ({progress_percentage:.2f}%)')
                 # filter data from json line.
                 listen_id, recording_id, release_id, release_name, artist_id, artist_name, track_name, listened_at_datetime, user_name = filter_data(
                     line)
