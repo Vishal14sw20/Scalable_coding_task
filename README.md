@@ -87,7 +87,7 @@ docker ps
 
 for copying data into your local host directory. paste your container_id here
 ```
-docker cp <containerIdOrName>:/app/pipeline.log /local_directory/
+docker cp <containerIdOrName>:/app/pipeline.log ./logs/
 ```
 
 This process will take some time to generating log file. meanwhile, you can check my sql queries in `analysis.py`
