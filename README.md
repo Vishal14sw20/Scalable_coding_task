@@ -84,6 +84,10 @@ See running container and copy container_id.
 ```
 docker ps
 ```
+create logs folder in current directory 
+```
+mkdir logs
+```
 
 for copying data into your local host directory. paste your container_id here
 ```
